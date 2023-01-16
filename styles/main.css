@@ -19,7 +19,6 @@ html {
 
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: #201a1a;
 }
 
 ul {
@@ -53,6 +52,54 @@ ul {
   }
 }
 
+
+
+/*------------------------------------------ Components Styling ------------------------------------------*/
+
+.main-heading {
+  text-align: center;
+}
+
+.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.main-heading h2::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: black;
+  transform: translate(-50%);
+}
+
+.main-heading h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  transform: translate(-50%, 50%);
+}
+
+.main-heading p {
+  width: 550px;
+  margin: 0 auto 100px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+}
 
 /*------------------------------------------ Header Styling ------------------------------------------*/
 
@@ -178,6 +225,7 @@ header .container nav .search:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.533);
   position: absolute;
+  z-index: 0;
 }
 
 .landing .welcome {
@@ -227,6 +275,11 @@ header .container nav .search:hover {
   position: absolute;
 }
 
+.landing .change-background:hover {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
 .landing .to-left {
   top: 50%;
   right: 30px;
@@ -269,3 +322,254 @@ header .container nav .search:hover {
   }
 
 }
+
+
+/*------------------------------------------ Service Styling ------------------------------------------*/
+
+
+.service {
+  padding: var(--section-padding) 0px;
+
+}
+
+.service .services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 100px;
+}
+
+.service .srv-box {
+  display: flex;
+}
+
+.service .srv-box i {
+  font-size: 50px;
+  min-width: fit-content;
+  padding-right: 30px;
+}
+
+.service .srv-box div:only-of-type h2 {
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+
+.service .srv-box div:only-of-type p {
+  line-height: 2;
+  color: #777;
+}
+
+@media (max-width :768px) {
+
+  .service .srv-box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service .srv-box div:only-of-type h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .service .srv-box div:only-of-type p {
+    text-align: center;
+  }
+
+  .service .srv-box i {
+    padding-right: 0px;
+    padding-bottom: 20px;
+  }
+}
+
+
+/*------------------------------------------ Design Styling ------------------------------------------*/
+
+
+.design {
+  background-image: url(../assets/design-features.jpg);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.design::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.673);
+  z-index: 2;
+}
+
+.design .design-image {
+  position: relative;
+  min-width: 50%;
+  z-index: 3;
+}
+
+.design .design-image img {
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.design .design-features {
+  position: relative;
+  flex: 1;
+  background-color: var(--transparent-color);
+  padding: 50px;
+  margin: 80px 0px;
+  color: white;
+  width: 50%;
+  z-index: 3;
+}
+
+.design .design-features h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.design .design-features ul li {
+  padding: 15px;
+}
+
+.design .design-features ul li i {
+  padding-right: 10px;
+}
+
+@media (max-width :768px) {
+  .design .design-image {
+    display: none;
+  }
+
+  .design .design-features ul,
+  .design .design-features h2 {
+    text-align: center;
+  }
+
+  .design .design-features h2 {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .design .design-features ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .design .design-features ul li i {
+    padding-bottom: 10px;
+  }
+}
+
+
+/*------------------------------------------ Portfolio Styling ------------------------------------------*/
+
+
+.portfolio {
+  padding: var(--section-padding) 0px;
+}
+
+.portfolio .container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .container ul li {
+  padding: 10px;
+}
+
+.portfolio .container ul .active {
+  padding: 10px;
+  color: white;
+  background-color: var(--main-color);
+}
+
+.portfolio .gallary {
+  padding: 50px 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.portfolio .gallary .box {
+  flex-basis: calc(25% - 5px);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.portfolio .gallary .box img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: 0.3s;
+}
+
+.portfolio .gallary .box .info {
+  position: absolute;
+  bottom: -100%;
+  transition: 0.3s;
+}
+
+.portfolio .gallary .box .info h3 {
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.portfolio .gallary .box .info p {
+  color: var(--main-color);
+}
+
+.portfolio .gallary .box:hover img {
+  transform: rotate(3deg) scale(110%);
+}
+
+.portfolio .gallary .box:hover .info {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.portfolio .gallary button {
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  text-transform: uppercase;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width:991.98px) {
+  .portfolio .gallary .box {
+    flex-basis: calc(50% - 5px);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (max-width:768px) {
+  .portfolio .gallary .box {
+    flex-basis: calc(100%);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+
+/*------------------------------------------ Portfolio Styling ------------------------------------------*/
