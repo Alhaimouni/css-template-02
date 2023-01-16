@@ -572,4 +572,63 @@ header .container nav .search:hover {
 }
 
 
-/*------------------------------------------ Portfolio Styling ------------------------------------------*/
+/*------------------------------------------ Video Styling ------------------------------------------*/
+
+
+.video {
+  position: relative;
+}
+
+.video::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: calc(100%);
+  background-color: rgba(0, 0, 0, 0.696);
+}
+
+.video video {
+  width: 100%;
+}
+
+.video .title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 100%;
+  background-color: var(--transparent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: white
+}
+
+.video .title h3 {
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.video .title p {
+  margin-bottom: 30px;
+}
+
+.video .title button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-transform: uppercase;
+}
+
+
+/*------------------------------------------ About Styling ------------------------------------------*/
+
+.about {
+  padding: var(--section-padding) 0px;
+}
